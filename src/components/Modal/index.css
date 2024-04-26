@@ -74,6 +74,12 @@
   justify-content: flex-start;
   max-width: 100%;
   overflow-x: auto;
+  /*to not display scroll bar */
+  ::-webkit-scrollbar {
+    display: "none";
+  }
+  -ms-overflow-style: none /* IE and Edge */;
+  scrollbar-width: none /* Firefox */;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1200px) {

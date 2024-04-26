@@ -143,9 +143,7 @@ const Table = () => {
   };
 
   const handleToggleView = () => {
-    console.log("toggleView called");
     setViewMode((prevMode) => {
-      console.log({ prevMode }, "prevMode");
       return prevMode === VIEW_MODE.TABLE
         ? VIEW_MODE.BAR_CHART
         : VIEW_MODE.TABLE;
@@ -178,7 +176,7 @@ const Table = () => {
           ) : null}
         </div>
         {viewMode === VIEW_MODE.BAR_CHART ? (
-          <div className="bar-char-container">
+          <div className="bar-chart-container">
             <Bar
               options={BAR_CHART_OPTIONS}
               data={barData}

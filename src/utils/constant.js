@@ -4,7 +4,7 @@ export const SORT_TYPE = { ASC: "asc", DESC: "desc" };
 
 export const VIEW_MODE = { TABLE: "table", BAR_CHART: "bar-chart" };
 
-export const ITEMS_PER_PAGE = 5;
+export const ITEMS_PER_PAGE = 7;
 
 export const BAR_CHART_OPTIONS = {
   responsive: true,
