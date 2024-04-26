@@ -1,0 +1,91 @@
+.main-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 50%;
+  width: 30%;
+  overflow-y: auto;
+  border-radius: 25px;
+  background-color: white;
+  padding: 50px 25px;
+  position: relative;
+
+  /*to not display scroll bar */
+  ::-webkit-scrollbar {
+    display: "none";
+  }
+  -ms-overflow-style: none /* IE and Edge */;
+  scrollbar-width: none /* Firefox */;
+}
+
+.modal-loader-wrapper {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-loader-wrapper p {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.close-icon {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slogan-text {
+  font-size: 18px;
+  margin: 16px 0;
+}
+
+.sponsers-text {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 18px 0 8px;
+  text-decoration: underline;
+}
+
+.sponsers-wrapper {
+  display: flex;
+  column-gap: 15px;
+  justify-content: flex-start;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
+  .container {
+    height: 50%;
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    height: 70%;
+    width: 70%;
+  }
+}
