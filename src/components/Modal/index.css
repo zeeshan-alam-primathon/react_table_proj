@@ -94,7 +94,7 @@
 @media only screen and (max-width: 600px) {
   .container {
     height: 70%;
-    width: 80%;
+    width: 90%;
     max-height: max-content;
   }
 }

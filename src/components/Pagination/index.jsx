@@ -3,6 +3,7 @@ const Pagination = ({ currentPage, handlePageChange, totalPages }) => {
     <div className="pagination-main-container">
       <button
         disabled={currentPage === 1}
+        style={{ cursor: currentPage === 1 ? "not-allowed" : "pointer" }}
         onClick={() => handlePageChange(currentPage - 1)}
       >
         Prev
@@ -12,6 +13,9 @@ const Pagination = ({ currentPage, handlePageChange, totalPages }) => {
       </span>
       <button
         disabled={currentPage === totalPages}
+        style={{
+          cursor: currentPage === totalPages ? "not-allowed" : "pointer",
+        }}
         onClick={() => handlePageChange(currentPage + 1)}
       >
         Next
