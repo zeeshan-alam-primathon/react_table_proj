@@ -200,7 +200,7 @@ const Table = () => {
                         if (tableHead !== "__typename") {
                           return (
                             <th key={index}>
-                              {tableHead}
+                              {tableHead[0].toUpperCase() + tableHead.slice(1)}
                               {tableHead === "year" ||
                               tableHead === "startDate" ||
                               tableHead === "endDate" ? (
