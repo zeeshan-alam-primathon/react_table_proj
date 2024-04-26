@@ -1,5 +1,11 @@
 export const URl = "https://api.react-finland.fi/graphql";
 
+export const CURRENT_PAGE = 1;
+
+export const TOTAL_PAGE_NUMBER = 1;
+
+export const DEBOUNCE_TIMING = 500;
+
 export const SORT_TYPE = { ASC: "asc", DESC: "desc" };
 
 export const VIEW_MODE = { TABLE: "table", BAR_CHART: "bar-chart" };

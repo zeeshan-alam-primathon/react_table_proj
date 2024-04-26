@@ -63,19 +63,21 @@ const Modal = ({ conferenceId, setModalOpen }) => {
                 </>
               ) : null}
               {organizer ? (
-                <>
-                  <p className="sponsers-text">Organizer</p>
-                  <div className="sponsers-wrapper">
-                    <div>
-                      <img
-                        src={organizer.image.url}
-                        alt={organizer.name}
-                        width={100}
-                        height={60}
-                      />
+                organizer?.image?.url ? (
+                  <>
+                    <p className="sponsers-text">Organizer</p>
+                    <div className="sponsers-wrapper">
+                      <div>
+                        <img
+                          src={organizer.image.url}
+                          alt={organizer.name}
+                          width={100}
+                          height={60}
+                        />
+                      </div>
                     </div>
-                  </div>
-                </>
+                  </>
+                ) : null
               ) : null}
             </>
           )}

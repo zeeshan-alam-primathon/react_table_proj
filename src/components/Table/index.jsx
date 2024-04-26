@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import SwapVertOutlinedIcon from "@mui/icons-material/SwapVertOutlined";
 import {
   Chart as ChartJS,
@@ -18,6 +18,9 @@ import {
   BAR_CHART_LABELS,
   BAR_CHART_OPTIONS,
   ITEMS_PER_PAGE,
+  CURRENT_PAGE,
+  TOTAL_PAGE_NUMBER,
+  DEBOUNCE_TIMING,
 } from "../../utils/constant";
 import { GET_USERS } from "../../graphql/queries";
 import { useDebounce } from "../../customHooks/useDebounce";
@@ -38,15 +41,14 @@ ChartJS.register(
 );
 
 const Table = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(CURRENT_PAGE);
   const [sortOrder, setSortOrder] = useState(SORT_TYPE.ASC);
   const [sortColumn, setSortColumn] = useState("");
   const [tableData, setTableData] = useState(null);
-  const [totalPages, setTotalPages] = useState(1);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [totalPages, setTotalPages] = useState(TOTAL_PAGE_NUMBER);
+  const [isModalOpen, setModalOpen] = useState(false);
   const [conferenceId, setConferenceId] = useState("");
   const [viewMode, setViewMode] = useState(VIEW_MODE.TABLE);
-
   const [query, setQuery] = useState("");
 
   const { loading, data } = useQuery(GET_USERS, {
@@ -54,8 +56,8 @@ const Table = () => {
   });
   const { conferences } = data || {};
 
-  // use debounce for searvh query
-  const searchQuery = useDebounce(query, 500);
+  // use debounce for search query
+  const searchQuery = useDebounce(query, DEBOUNCE_TIMING);
 
   // for sorting table data
   useEffect(() => {
@@ -160,7 +162,7 @@ const Table = () => {
 
   return (
     <>
-      {modalOpen ? (
+      {isModalOpen ? (
         <Modal setModalOpen={setModalOpen} conferenceId={conferenceId} />
       ) : null}
       <div className="table-main-container">
